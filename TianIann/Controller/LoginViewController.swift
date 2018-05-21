@@ -17,12 +17,15 @@ class LoginViewController: UIViewController {
   @IBOutlet weak var loginButton: CustomButton!
   
   // MARK: - Properties
+  var apiConfiguration: ApiConfiguration!
   var keyboardOnScreen = false
 
   
   // MARK: - View Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    apiConfiguration = ApiConfiguration.shared
     
     configureUI()
     
@@ -146,8 +149,73 @@ private extension LoginViewController {
   
   // MARK: TheMovieDB
   private func getRequestToken() {
+    /* TASK: Get a request token, then store it (appDelegate.requestToken) and login with the token */
     
+    /* 1. Set the parameters */
+    let methodParameters = [
+      ApiConfiguration.TMDBParameterKeys.ApiKey: ApiConfiguration.TMDBParameterValues.ApiKey
+    ]
     
+    /* 2/3. Build the URL, Configure the request */
+    let request = URLRequest(url: apiConfiguration.tmdbURLFromParameters(methodParameters as [String:AnyObject], withPathExtension: "/authentication/token/new"))
+    
+    /* 4. Make the request */
+    let task = apiConfiguration.sharedSession.dataTask(with: request) { (data, response, error) in
+      
+      // If an error occurs, print it and re-enable the UI
+      func displayError(_ error: String) {
+        print(error)
+        performUIUpdatesOnMain {
+          self.setUIEnabled(true)
+          self.errorDisplayeLabel.text = "Login Failed (Request Token)."
+        }
+      }
+
+      // GUARD: Error occur
+      guard (error == nil) else {
+        displayError("There was an error with your request: \(error!)")
+        return
+      }
+      
+      // GUARD: Get a successful 2XX response
+      guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
+        displayError("Your request returned a status code other than 2xx!")
+        return
+      }
+      
+      // GUARD: Any data returned
+      guard let data = data else {
+        displayError("No data was returned by the request!")
+        return
+      }
+      
+      // 5. Parse the data
+      let parsedResult: [String:AnyObject]!
+      do {
+        parsedResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String:AnyObject]
+      } catch {
+        displayError("Could not parse the data as JSON: '\(data)'")
+        return
+      }
+      
+      // GUARD: TheMovieDB return an error
+      if let _ = parsedResult[ApiConfiguration.TMDBResponseKeys.StatusCode] as? Int {
+        displayError("TheMovieDB returned an error. See the '\(ApiConfiguration.TMDBResponseKeys.StatusCode)' and '\(ApiConfiguration.TMDBResponseKeys.StatusMessage)' in \(parsedResult)")
+        return
+      }
+      
+      // GUARD: Received the "request_token" key in parsedResult
+      guard let requestToken = parsedResult[ApiConfiguration.TMDBResponseKeys.RequestToken] as? String else {
+        displayError("Cannot find key '\(ApiConfiguration.TMDBResponseKeys.RequestToken)' in \(parsedResult)")
+        return
+      }
+      
+      // 6. Use the data
+      self.apiConfiguration.requestToken = requestToken
+    }
+    
+    // 7. Start the request
+    task.resume()
   }
 }
 

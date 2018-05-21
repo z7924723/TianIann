@@ -9,7 +9,8 @@
 import UIKit
 
 // MARK: - Configuration
-struct Configuration {
+struct ApiConfiguration {
+  static let shared = ApiConfiguration()
   
   private init() {}
   
@@ -55,12 +56,11 @@ struct Configuration {
   }
   
   // MARK: - Helper Methods
-  func tmdbURLFromParameters(_ parameters: [String:AnyObject],
-                             withPathExtension: String? = nil) -> URL {
+  func tmdbURLFromParameters(_ parameters: [String:AnyObject], withPathExtension: String? = nil) -> URL {
     var components = URLComponents()
-    components.scheme = Configuration.TMDB.ApiScheme
-    components.host = Configuration.TMDB.ApiHost
-    components.path = Configuration.TMDB.ApiPath + (withPathExtension ?? "")
+    components.scheme = ApiConfiguration.TMDB.ApiScheme
+    components.host = ApiConfiguration.TMDB.ApiHost
+    components.path = ApiConfiguration.TMDB.ApiPath + (withPathExtension ?? "")
     components.queryItems = [URLQueryItem]()
     
     for (key, value) in parameters {

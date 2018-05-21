@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7010A61D20B019E40071AD49 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7010A61C20B019E40071AD49 /* Configuration.swift */; };
+		7010A61D20B019E40071AD49 /* ApiConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7010A61C20B019E40071AD49 /* ApiConfiguration.swift */; };
 		7010A61F20B1AF630071AD49 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7010A61E20B1AF630071AD49 /* UITextField.swift */; };
 		7010A62120B1CB7D0071AD49 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7010A62020B1CB7D0071AD49 /* GradientView.swift */; };
 		70143ACD20AFFB4A00F0FB14 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70143ACC20AFFB4A00F0FB14 /* Launch Screen.storyboard */; };
@@ -20,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7010A61C20B019E40071AD49 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		7010A61C20B019E40071AD49 /* ApiConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfiguration.swift; sourceTree = "<group>"; };
 		7010A61E20B1AF630071AD49 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		7010A62020B1CB7D0071AD49 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		70143ACC20AFFB4A00F0FB14 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		70CBD17220B2A6F4005689B8 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				7010A61C20B019E40071AD49 /* Configuration.swift */,
+				7010A61C20B019E40071AD49 /* ApiConfiguration.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -195,7 +195,7 @@
 				70D7C46220AFEB08003B9817 /* AppDelegate.swift in Sources */,
 				70143ACF20B0069300F0FB14 /* UIButton.swift in Sources */,
 				7010A62120B1CB7D0071AD49 /* GradientView.swift in Sources */,
-				7010A61D20B019E40071AD49 /* Configuration.swift in Sources */,
+				7010A61D20B019E40071AD49 /* ApiConfiguration.swift in Sources */,
 				70CBD17720B2A8EF005689B8 /* GCDBlackBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
