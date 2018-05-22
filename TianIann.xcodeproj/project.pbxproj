@@ -45,6 +45,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		70C10B6A20B3F5510069A63A /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
 		70CBD17220B2A6F4005689B8 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +87,7 @@
 		70D7C46020AFEB08003B9817 /* TianIann */ = {
 			isa = PBXGroup;
 			children = (
+				70C10B6A20B3F5510069A63A /* DataManager */,
 				70CBD17520B2A898005689B8 /* Library */,
 				70CBD17220B2A6F4005689B8 /* Configuration */,
 				70D7C47420AFF98F003B9817 /* Extension */,
