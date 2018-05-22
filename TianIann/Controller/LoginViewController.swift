@@ -149,17 +149,17 @@ private extension LoginViewController {
   
   // MARK: TheMovieDB
   private func getRequestToken() {
-    /* TASK: Get a request token, then store it (appDelegate.requestToken) and login with the token */
+    /* TASK: Get a request token, then store it (apiConfiguration.requestToken) and login with the token */
     
-    /* 1. Set the parameters */
+    // 1. Set the parameters
     let methodParameters = [
       ApiConfiguration.TMDBParameterKeys.ApiKey: ApiConfiguration.TMDBParameterValues.ApiKey
     ]
     
-    /* 2/3. Build the URL, Configure the request */
+    // 2/3. Build the URL, Configure the request
     let request = URLRequest(url: apiConfiguration.tmdbURLFromParameters(methodParameters as [String:AnyObject], withPathExtension: "/authentication/token/new"))
-    
-    /* 4. Make the request */
+
+    // 4. Make the request
     let task = apiConfiguration.sharedSession.dataTask(with: request) { (data, response, error) in
       
       // If an error occurs, print it and re-enable the UI
@@ -210,11 +210,129 @@ private extension LoginViewController {
         return
       }
       
-      // 6. Use the data
       self.apiConfiguration.requestToken = requestToken
+      self.loginWithToken(self.apiConfiguration.requestToken!)
     }
     
-    // 7. Start the request
+    task.resume()
+  }
+  
+  private func loginWithToken(_ requestToken: String) {
+    /* TASK: Login, then get a session id */
+    
+    let methodParameters = [
+      ApiConfiguration.TMDBParameterKeys.ApiKey: ApiConfiguration.TMDBParameterValues.ApiKey,
+      ApiConfiguration.TMDBParameterKeys.RequestToken: requestToken,
+      ApiConfiguration.TMDBParameterKeys.Username: userNameTextField.text!,
+      ApiConfiguration.TMDBParameterKeys.Password: passwordTextField.text!
+    ]
+    
+    let request = URLRequest(url: apiConfiguration.tmdbURLFromParameters(methodParameters as [String:AnyObject], withPathExtension: "/authentication/token/validate_with_login"))
+
+    let task = apiConfiguration.sharedSession.dataTask(with: request) { (data, response, error) in
+      
+      func displayError(_ error: String) {
+        print(error)
+        performUIUpdatesOnMain {
+          self.setUIEnabled(true)
+          self.errorDisplayeLabel.text = "Login Failed (Session ID)."
+        }
+      }
+      
+      guard (error == nil) else {
+        displayError("There was an error with your request: \(error!)")
+        return
+      }
+      
+      guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
+        displayError("Your request returned a status code other than 2xx!")
+        return
+      }
+      
+      guard let data = data else {
+        displayError("No data was returned by the request!")
+        return
+      }
+      
+      let parsedResult: [String:AnyObject]!
+      do {
+        parsedResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String:AnyObject]
+      } catch {
+        displayError("Could not parse the data as JSON: '\(data)'")
+        return
+      }
+      
+      print(parsedResult)
+      if let _ = parsedResult[ApiConfiguration.TMDBResponseKeys.StatusCode] as? Int {
+        displayError("TheMovieDB returned an error. See the '\(ApiConfiguration.TMDBResponseKeys.StatusCode)' and '\(ApiConfiguration.TMDBResponseKeys.StatusMessage)' in \(parsedResult)")
+        return
+      }
+      
+      guard let success = parsedResult[ApiConfiguration.TMDBResponseKeys.Success] as? Bool, success == true else {
+        displayError("Cannot find key '\(ApiConfiguration.TMDBResponseKeys.Success)' in \(parsedResult)")
+        return
+      }
+      
+      self.getSessionID(self.apiConfiguration.requestToken!)
+      
+    }
+    task.resume()
+  }
+  
+  private func getSessionID(_ requestToken: String) {
+    let methodParameters = [
+      ApiConfiguration.TMDBParameterKeys.ApiKey: ApiConfiguration.TMDBParameterValues.ApiKey,
+      ApiConfiguration.TMDBParameterKeys.RequestToken: requestToken
+    ]
+    
+    let request = URLRequest(url: apiConfiguration.tmdbURLFromParameters(methodParameters as [String:AnyObject], withPathExtension: "/authentication/session/new"))
+
+    let task = apiConfiguration.sharedSession.dataTask(with: request) { (data, response, error) in
+      
+      func displayError(_ error: String, debugLabelText: String? = nil) {
+        print(error)
+        performUIUpdatesOnMain {
+          self.setUIEnabled(true)
+          self.errorDisplayeLabel.text = "Login Failed (Session ID)."
+        }
+      }
+      
+      guard (error == nil) else {
+        displayError("There was an error with your request: \(error!)")
+        return
+      }
+      
+      guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
+        displayError("Your request returned a status code other than 2xx!")
+        return
+      }
+      
+      guard let data = data else {
+        displayError("No data was returned by the request!")
+        return
+      }
+      
+      let parsedResult: [String:AnyObject]!
+      do {
+        parsedResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String:AnyObject]
+      } catch {
+        displayError("Could not parse the data as JSON: '\(data)'")
+        return
+      }
+      
+      if let _ = parsedResult[ApiConfiguration.TMDBResponseKeys.StatusCode] as? Int {
+        displayError("TheMovieDB returned an error. See the '\(ApiConfiguration.TMDBResponseKeys.StatusCode)' and '\(ApiConfiguration.TMDBResponseKeys.StatusMessage)' in \(parsedResult)")
+        return
+      }
+      
+      guard let sessionID = parsedResult[ApiConfiguration.TMDBResponseKeys.SessionID] as? String else {
+        displayError("Cannot find key '\(ApiConfiguration.TMDBResponseKeys.SessionID)' in \(parsedResult)")
+        return
+      }
+      
+      self.apiConfiguration.sessionID = sessionID
+//      self.getUserID(self.appDelegate.sessionID!)
+    }
     task.resume()
   }
 }
