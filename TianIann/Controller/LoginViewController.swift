@@ -262,7 +262,6 @@ private extension LoginViewController {
         return
       }
       
-      print(parsedResult)
       if let _ = parsedResult[ApiConfiguration.TMDBResponseKeys.StatusCode] as? Int {
         displayError("TheMovieDB returned an error. See the '\(ApiConfiguration.TMDBResponseKeys.StatusCode)' and '\(ApiConfiguration.TMDBResponseKeys.StatusMessage)' in \(parsedResult)")
         return
@@ -331,10 +330,67 @@ private extension LoginViewController {
       }
       
       self.apiConfiguration.sessionID = sessionID
-//      self.getUserID(self.appDelegate.sessionID!)
+      self.getUserID(self.apiConfiguration.sessionID!)
     }
     task.resume()
   }
+  
+  private func getUserID(_ sessionID: String) {
+    let methodParameters = [
+      ApiConfiguration.TMDBParameterKeys.ApiKey: ApiConfiguration.TMDBParameterValues.ApiKey,
+      ApiConfiguration.TMDBParameterKeys.SessionID: sessionID
+    ]
+    
+    let request = URLRequest(url: apiConfiguration.tmdbURLFromParameters(methodParameters as [String:AnyObject], withPathExtension: "/account"))
+    
+    let task = apiConfiguration.sharedSession.dataTask(with: request) { (data, response, error) in
+      func displayError(_ error: String, debugLabelText: String? = nil) {
+        print(error)
+        performUIUpdatesOnMain {
+          self.setUIEnabled(true)
+          self.errorDisplayeLabel.text = "Login Failed (User ID)."
+        }
+      }
+      
+      guard (error == nil) else {
+        displayError("There was an error with your request: \(error!)")
+        return
+      }
+      
+      guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
+        displayError("Your request returned a status code other than 2xx!")
+        return
+      }
+      
+      guard let data = data else {
+        displayError("No data was returned by the request!")
+        return
+      }
+      
+      let parsedResult: [String:AnyObject]!
+      do {
+        parsedResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String:AnyObject]
+      } catch {
+        print("Could not parse the data as JSON: '\(data)'")
+        return
+      }
+      
+      if let _ = parsedResult[ApiConfiguration.TMDBResponseKeys.StatusCode] as? Int {
+        displayError("TheMovieDB returned an error. See the '\(ApiConfiguration.TMDBResponseKeys.StatusCode)' and '\(ApiConfiguration.TMDBResponseKeys.StatusMessage)' in \(parsedResult)")
+        return
+      }
+      
+      guard let userID = parsedResult![ApiConfiguration.TMDBResponseKeys.UserID] as? Int else {
+        displayError("Cannot find key '\(ApiConfiguration.TMDBResponseKeys.UserID)' in \(parsedResult)")
+        return
+      }
+      
+      self.apiConfiguration.userID = userID
+      print(userID)
+    }
+    task.resume()
+  }
+
 }
 
 // MARK: - LoginViewController (Notifications)
