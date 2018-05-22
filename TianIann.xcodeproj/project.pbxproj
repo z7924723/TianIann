@@ -45,19 +45,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BA2B7043AB32001BA262B0601C64BC1F /* DataManager */ = {
+		0F875CC1A4F8BBC17F0395F4B8E516BF /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				A1DACA6082BD8E8086561A69863B335B /* TianIann.app */,
 			);
-			path = DataManager;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		E8EAD79D4990475321AC458E50F3BA0B /* Configuration */ = {
+		4B685E0BF204D07C8E432211B49AD481 /* TianIann */ = {
 			isa = PBXGroup;
 			children = (
-				3FC992C9D2B49689BBCAD4A020782A7D /* ApiConfiguration.swift */,
+				E8EAD79D4990475321AC458E50F3BA0B /* Configuration */,
+				621CAF78E8D26BFB4AD71C8A4F0B5174 /* Controller */,
+				C459C982E2DD131FE6BE6E7CC6C5C174 /* Extension */,
+				814BAC41FAAF52D2AA2A747401715912 /* Library */,
+				63C7AD842378E2FF3F2989D2A074960D /* Storyboard */,
+				03C1E47913D54288787513C1752BFE41 /* AppDelegate.swift */,
+				2455F750A5A63682AA37AECAB1A89C27 /* Assets.xcassets */,
+				D2CE62CAA88C2FEA3C28DF84595EEAA2 /* Info.plist */,
 			);
-			path = Configuration;
+			path = TianIann;
+			sourceTree = "<group>";
+		};
+		621CAF78E8D26BFB4AD71C8A4F0B5174 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				11D7795838C954B37B372EE1CFA8C697 /* LoginViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		63C7AD842378E2FF3F2989D2A074960D /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				5E9C815A43EC79019C386DF497049A50 /* Launch Screen.storyboard */,
+				4BD82071341C3C1AF647FC956DA06FF0 /* Main.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		814BAC41FAAF52D2AA2A747401715912 /* Library */ = {
@@ -76,39 +101,6 @@
 			);
 			sourceTree = "<group>";
 		};
-		0F875CC1A4F8BBC17F0395F4B8E516BF /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A1DACA6082BD8E8086561A69863B335B /* TianIann.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		4B685E0BF204D07C8E432211B49AD481 /* TianIann */ = {
-			isa = PBXGroup;
-			children = (
-				E8EAD79D4990475321AC458E50F3BA0B /* Configuration */,
-				621CAF78E8D26BFB4AD71C8A4F0B5174 /* Controller */,
-				BA2B7043AB32001BA262B0601C64BC1F /* DataManager */,
-				C459C982E2DD131FE6BE6E7CC6C5C174 /* Extension */,
-				814BAC41FAAF52D2AA2A747401715912 /* Library */,
-				63C7AD842378E2FF3F2989D2A074960D /* Storyboard */,
-				03C1E47913D54288787513C1752BFE41 /* AppDelegate.swift */,
-				2455F750A5A63682AA37AECAB1A89C27 /* Assets.xcassets */,
-				D2CE62CAA88C2FEA3C28DF84595EEAA2 /* Info.plist */,
-			);
-			path = TianIann;
-			sourceTree = "<group>";
-		};
-		63C7AD842378E2FF3F2989D2A074960D /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				5E9C815A43EC79019C386DF497049A50 /* Launch Screen.storyboard */,
-				4BD82071341C3C1AF647FC956DA06FF0 /* Main.storyboard */,
-			);
-			path = Storyboard;
-			sourceTree = "<group>";
-		};
 		C459C982E2DD131FE6BE6E7CC6C5C174 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,12 +111,12 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		621CAF78E8D26BFB4AD71C8A4F0B5174 /* Controller */ = {
+		E8EAD79D4990475321AC458E50F3BA0B /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				11D7795838C954B37B372EE1CFA8C697 /* LoginViewController.swift */,
+				3FC992C9D2B49689BBCAD4A020782A7D /* ApiConfiguration.swift */,
 			);
-			path = Controller;
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +214,25 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2D5AAAA8918F32F269EE706124CB8789 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XRUZX72PMD;
+				INFOPLIST_FILE = TianIann/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = PinguDemo.TianIann;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 		34E24E459400145974E8E6848E516782 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -282,6 +293,25 @@
 			};
 			name = Debug;
 		};
+		94FE3AF9CDBE0A0749BF1577B303B058 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XRUZX72PMD;
+				INFOPLIST_FILE = TianIann/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = PinguDemo.TianIann;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		B77474494322F38E5951EF81720CB95C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -336,61 +366,23 @@
 			};
 			name = Release;
 		};
-		2D5AAAA8918F32F269EE706124CB8789 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XRUZX72PMD;
-				INFOPLIST_FILE = TianIann/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = PinguDemo.TianIann;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		94FE3AF9CDBE0A0749BF1577B303B058 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XRUZX72PMD;
-				INFOPLIST_FILE = TianIann/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = PinguDemo.TianIann;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DAAD2DA7B951B7E8CDFE0C2F3060113E /* Build configuration list for PBXProject "TianIann" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				34E24E459400145974E8E6848E516782 /* Debug */,
-				B77474494322F38E5951EF81720CB95C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		91C9361CC810F56C08EFA945FA8FD107 /* Build configuration list for PBXNativeTarget "TianIann" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D5AAAA8918F32F269EE706124CB8789 /* Debug */,
 				94FE3AF9CDBE0A0749BF1577B303B058 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DAAD2DA7B951B7E8CDFE0C2F3060113E /* Build configuration list for PBXProject "TianIann" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34E24E459400145974E8E6848E516782 /* Debug */,
+				B77474494322F38E5951EF81720CB95C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
