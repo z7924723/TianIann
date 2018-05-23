@@ -72,6 +72,7 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7cG-hB-8f8"/>
+                                            <segue destination="ky4-nO-tCQ" kind="show" id="8u1-tT-6mw"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAu-j0-dd1" userLabel="Error Display Label">
@@ -122,6 +123,14 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--MovieTabScreen-->
+        <scene sceneID="Kgw-6P-Rf3">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MovieTabScreen" id="ky4-nO-tCQ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bq0-83-OMf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="911" y="133"/>
         </scene>
     </scenes>
     <resources>
