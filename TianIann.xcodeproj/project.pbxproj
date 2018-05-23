@@ -20,6 +20,7 @@
 		929F98FFAC57BBADDD3B651ED4A998BA /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C09BC542F5E31FE3233869E4754277E /* UIButton.swift */; };
 		A404ED54BCA64F87A044C987128F29B8 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0BC7912BB93B3703B4D80127E1B4DC /* GradientView.swift */; };
 		B22210F24FF429E27C84AF5DFEDB23FE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7795838C954B37B372EE1CFA8C697 /* LoginViewController.swift */; };
+		D6B193B320B4F7E50064353D /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6B193B220B4F7E50064353D /* Test.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		A0D48BCE6C1C33BBEE82CC97B37E735E /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		A1DACA6082BD8E8086561A69863B335B /* TianIann.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TianIann.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2CE62CAA88C2FEA3C28DF84595EEAA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6B193B220B4F7E50064353D /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
 		ED8CEC2C25A2B0E6FF16E3924E78AF07 /* GCDBlackBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +92,7 @@
 				70C10B6C20B46FCB0069A63A /* MovieTabScreen.storyboard */,
 				70C10B6E20B472690069A63A /* Favorites.storyboard */,
 				70C10B7020B4739C0069A63A /* Comedy.storyboard */,
+				D6B193B220B4F7E50064353D /* Test.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				86E2E72228E0C3C327150249678E46D2 /* Main.storyboard in Resources */,
 				70C10B6D20B46FCB0069A63A /* MovieTabScreen.storyboard in Resources */,
 				70C10B6F20B472690069A63A /* Favorites.storyboard in Resources */,
+				D6B193B320B4F7E50064353D /* Test.storyboard in Resources */,
 				70C10B7120B4739C0069A63A /* Comedy.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
