@@ -7,39 +7,57 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07C27ED7313EC2A0A3FA67BDBCE4DF74 /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2ACBABB96A5AA05309213167FF5AF58 /* Test.storyboard */; };
 		16359BA2D26B37B316EDE56460C68573 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D48BCE6C1C33BBEE82CC97B37E735E /* UITextField.swift */; };
 		16B7D15DB66557CA60EC450181CF9444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1E47913D54288787513C1752BFE41 /* AppDelegate.swift */; };
 		4CE93A03C7C9F2C65EF77FE48E4164B8 /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8CEC2C25A2B0E6FF16E3924E78AF07 /* GCDBlackBox.swift */; };
 		5320917BEABF635BCCB8B4A31B5AF5A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2455F750A5A63682AA37AECAB1A89C27 /* Assets.xcassets */; };
 		64C188E6E12FC6152547B68A1A3773D2 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C815A43EC79019C386DF497049A50 /* Launch Screen.storyboard */; };
+		701C5F2520B5C851000E1573 /* ApiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701C5F2420B5C851000E1573 /* ApiData.swift */; };
+		701C5F2720B5CD84000E1573 /* ApiMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701C5F2620B5CD84000E1573 /* ApiMethods.swift */; };
+		7051B5B320C6623100FEA562 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7051B5B220C6623100FEA562 /* ApiClient.swift */; };
+		7051B5B520C6677A00FEA562 /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7051B5B420C6677A00FEA562 /* ApiConfig.swift */; };
+		7051B5B720C8297E00FEA562 /* ApiConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7051B5B620C8297E00FEA562 /* ApiConvenience.swift */; };
+		7051B5B920C82EFF00FEA562 /* WebAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7051B5B820C82EFF00FEA562 /* WebAuthViewController.swift */; };
+		7051B5BC20C84DC300FEA562 /* TMDBMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7051B5BB20C84DC300FEA562 /* TMDBMovie.swift */; };
+		7051B5BE20C8DF8000FEA562 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7051B5BD20C8DF8000FEA562 /* ProfileViewController.swift */; };
+		70C10B7720B503D70069A63A /* FavortiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C10B7620B503D70069A63A /* FavortiesViewController.swift */; };
+		70C10B7920B504C50069A63A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C10B7820B504C50069A63A /* HomeViewController.swift */; };
+		70C10B7B20B508700069A63A /* HomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70C10B7A20B508700069A63A /* HomeScreen.storyboard */; };
 		86E2E72228E0C3C327150249678E46D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD82071341C3C1AF647FC956DA06FF0 /* Main.storyboard */; };
-		8B92148D54C35A08E5C9D344B643EF15 /* ApiConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC992C9D2B49689BBCAD4A020782A7D /* ApiConfiguration.swift */; };
+		8B92148D54C35A08E5C9D344B643EF15 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC992C9D2B49689BBCAD4A020782A7D /* ApiConstants.swift */; };
 		929F98FFAC57BBADDD3B651ED4A998BA /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C09BC542F5E31FE3233869E4754277E /* UIButton.swift */; };
 		A404ED54BCA64F87A044C987128F29B8 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0BC7912BB93B3703B4D80127E1B4DC /* GradientView.swift */; };
 		B22210F24FF429E27C84AF5DFEDB23FE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7795838C954B37B372EE1CFA8C697 /* LoginViewController.swift */; };
-		C13D1F9C8325DB9A90F5899E6682FFF4 /* MovieTabScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B77FAAF0C71A18209C415025708FF /* MovieTabScreen.storyboard */; };
-		E9818EABB2F632B0394C1FB95C937A58 /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC2264264B308CB60F21A4D4E60BBF8F /* Favorites.storyboard */; };
-		FACEFC073CA0A257B7225EE082FC4901 /* Comedy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B39DD9AF83CD512947D37624D0A864F /* Comedy.storyboard */; };
+		C13D1F9C8325DB9A90F5899E6682FFF4 /* MoviesTabController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B77FAAF0C71A18209C415025708FF /* MoviesTabController.storyboard */; };
+		E9818EABB2F632B0394C1FB95C937A58 /* FavoritesScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC2264264B308CB60F21A4D4E60BBF8F /* FavoritesScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		03C1E47913D54288787513C1752BFE41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11D7795838C954B37B372EE1CFA8C697 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		1A2B77FAAF0C71A18209C415025708FF /* MovieTabScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovieTabScreen.storyboard; sourceTree = "<group>"; };
+		1A2B77FAAF0C71A18209C415025708FF /* MoviesTabController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoviesTabController.storyboard; sourceTree = "<group>"; };
 		1E0BC7912BB93B3703B4D80127E1B4DC /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		2455F750A5A63682AA37AECAB1A89C27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3FC992C9D2B49689BBCAD4A020782A7D /* ApiConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfiguration.swift; sourceTree = "<group>"; };
+		3FC992C9D2B49689BBCAD4A020782A7D /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
 		5E9C815A43EC79019C386DF497049A50 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		6B39DD9AF83CD512947D37624D0A864F /* Comedy.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Comedy.storyboard; sourceTree = "<group>"; };
+		701C5F2420B5C851000E1573 /* ApiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiData.swift; sourceTree = "<group>"; };
+		701C5F2620B5CD84000E1573 /* ApiMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiMethods.swift; sourceTree = "<group>"; };
+		7051B5B220C6623100FEA562 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		7051B5B420C6677A00FEA562 /* ApiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfig.swift; sourceTree = "<group>"; };
+		7051B5B620C8297E00FEA562 /* ApiConvenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "\U0003ApiConvenience.swift"; sourceTree = "<group>"; };
+		7051B5B820C82EFF00FEA562 /* WebAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "\U0003\U0003\U0003WebAuthViewController.swift"; sourceTree = "<group>"; };
+		7051B5BB20C84DC300FEA562 /* TMDBMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBMovie.swift; sourceTree = "<group>"; };
+		7051B5BD20C8DF8000FEA562 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		70C10B7620B503D70069A63A /* FavortiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavortiesViewController.swift; sourceTree = "<group>"; };
+		70C10B7820B504C50069A63A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		70C10B7A20B508700069A63A /* HomeScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeScreen.storyboard; sourceTree = "<group>"; };
 		9C09BC542F5E31FE3233869E4754277E /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		9E238DDCCA68FE85241260CAE7D669A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0D48BCE6C1C33BBEE82CC97B37E735E /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		A1DACA6082BD8E8086561A69863B335B /* TianIann.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TianIann.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D2ACBABB96A5AA05309213167FF5AF58 /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
 		D2CE62CAA88C2FEA3C28DF84595EEAA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED8CEC2C25A2B0E6FF16E3924E78AF07 /* GCDBlackBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
-		FC2264264B308CB60F21A4D4E60BBF8F /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
+		FC2264264B308CB60F21A4D4E60BBF8F /* FavoritesScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavoritesScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,14 +82,15 @@
 		4B685E0BF204D07C8E432211B49AD481 /* TianIann */ = {
 			isa = PBXGroup;
 			children = (
-				E8EAD79D4990475321AC458E50F3BA0B /* Configuration */,
+				03C1E47913D54288787513C1752BFE41 /* AppDelegate.swift */,
+				2455F750A5A63682AA37AECAB1A89C27 /* Assets.xcassets */,
 				621CAF78E8D26BFB4AD71C8A4F0B5174 /* Controller */,
 				C459C982E2DD131FE6BE6E7CC6C5C174 /* Extension */,
 				814BAC41FAAF52D2AA2A747401715912 /* Library */,
+				7051B5BA20C84DAD00FEA562 /* Model */,
+				E8EAD79D4990475321AC458E50F3BA0B /* Network Manager */,
 				63C7AD842378E2FF3F2989D2A074960D /* Storyboard */,
-				03C1E47913D54288787513C1752BFE41 /* AppDelegate.swift */,
-				2455F750A5A63682AA37AECAB1A89C27 /* Assets.xcassets */,
-				D2CE62CAA88C2FEA3C28DF84595EEAA2 /* Info.plist */,
+				7051B5BF20C8DFB300FEA562 /* Supporting Files */,
 			);
 			path = TianIann;
 			sourceTree = "<group>";
@@ -80,6 +99,10 @@
 			isa = PBXGroup;
 			children = (
 				11D7795838C954B37B372EE1CFA8C697 /* LoginViewController.swift */,
+				70C10B7620B503D70069A63A /* FavortiesViewController.swift */,
+				70C10B7820B504C50069A63A /* HomeViewController.swift */,
+				7051B5B820C82EFF00FEA562 /* WebAuthViewController.swift */,
+				7051B5BD20C8DF8000FEA562 /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -87,14 +110,29 @@
 		63C7AD842378E2FF3F2989D2A074960D /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				6B39DD9AF83CD512947D37624D0A864F /* Comedy.storyboard */,
-				FC2264264B308CB60F21A4D4E60BBF8F /* Favorites.storyboard */,
+				FC2264264B308CB60F21A4D4E60BBF8F /* FavoritesScreen.storyboard */,
+				70C10B7A20B508700069A63A /* HomeScreen.storyboard */,
 				5E9C815A43EC79019C386DF497049A50 /* Launch Screen.storyboard */,
 				4BD82071341C3C1AF647FC956DA06FF0 /* Main.storyboard */,
-				1A2B77FAAF0C71A18209C415025708FF /* MovieTabScreen.storyboard */,
-				D2ACBABB96A5AA05309213167FF5AF58 /* Test.storyboard */,
+				1A2B77FAAF0C71A18209C415025708FF /* MoviesTabController.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		7051B5BA20C84DAD00FEA562 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7051B5BB20C84DC300FEA562 /* TMDBMovie.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7051B5BF20C8DFB300FEA562 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D2CE62CAA88C2FEA3C28DF84595EEAA2 /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		814BAC41FAAF52D2AA2A747401715912 /* Library */ = {
@@ -123,12 +161,17 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		E8EAD79D4990475321AC458E50F3BA0B /* Configuration */ = {
+		E8EAD79D4990475321AC458E50F3BA0B /* Network Manager */ = {
 			isa = PBXGroup;
 			children = (
-				3FC992C9D2B49689BBCAD4A020782A7D /* ApiConfiguration.swift */,
+				3FC992C9D2B49689BBCAD4A020782A7D /* ApiConstants.swift */,
+				701C5F2420B5C851000E1573 /* ApiData.swift */,
+				701C5F2620B5CD84000E1573 /* ApiMethods.swift */,
+				7051B5B220C6623100FEA562 /* ApiClient.swift */,
+				7051B5B420C6677A00FEA562 /* ApiConfig.swift */,
+				7051B5B620C8297E00FEA562 /* ApiConvenience.swift */,
 			);
-			path = Configuration;
+			path = "Network Manager";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,12 +233,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5320917BEABF635BCCB8B4A31B5AF5A2 /* Assets.xcassets in Resources */,
-				FACEFC073CA0A257B7225EE082FC4901 /* Comedy.storyboard in Resources */,
-				E9818EABB2F632B0394C1FB95C937A58 /* Favorites.storyboard in Resources */,
+				70C10B7B20B508700069A63A /* HomeScreen.storyboard in Resources */,
+				E9818EABB2F632B0394C1FB95C937A58 /* FavoritesScreen.storyboard in Resources */,
 				64C188E6E12FC6152547B68A1A3773D2 /* Launch Screen.storyboard in Resources */,
 				86E2E72228E0C3C327150249678E46D2 /* Main.storyboard in Resources */,
-				C13D1F9C8325DB9A90F5899E6682FFF4 /* MovieTabScreen.storyboard in Resources */,
-				07C27ED7313EC2A0A3FA67BDBCE4DF74 /* Test.storyboard in Resources */,
+				C13D1F9C8325DB9A90F5899E6682FFF4 /* MoviesTabController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,13 +248,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B92148D54C35A08E5C9D344B643EF15 /* ApiConfiguration.swift in Sources */,
+				8B92148D54C35A08E5C9D344B643EF15 /* ApiConstants.swift in Sources */,
+				7051B5BC20C84DC300FEA562 /* TMDBMovie.swift in Sources */,
 				16B7D15DB66557CA60EC450181CF9444 /* AppDelegate.swift in Sources */,
+				701C5F2520B5C851000E1573 /* ApiData.swift in Sources */,
+				70C10B7920B504C50069A63A /* HomeViewController.swift in Sources */,
+				7051B5B520C6677A00FEA562 /* ApiConfig.swift in Sources */,
+				70C10B7720B503D70069A63A /* FavortiesViewController.swift in Sources */,
+				7051B5BE20C8DF8000FEA562 /* ProfileViewController.swift in Sources */,
 				4CE93A03C7C9F2C65EF77FE48E4164B8 /* GCDBlackBox.swift in Sources */,
+				701C5F2720B5CD84000E1573 /* ApiMethods.swift in Sources */,
 				A404ED54BCA64F87A044C987128F29B8 /* GradientView.swift in Sources */,
 				B22210F24FF429E27C84AF5DFEDB23FE /* LoginViewController.swift in Sources */,
+				7051B5B920C82EFF00FEA562 /* WebAuthViewController.swift in Sources */,
 				929F98FFAC57BBADDD3B651ED4A998BA /* UIButton.swift in Sources */,
 				16359BA2D26B37B316EDE56460C68573 /* UITextField.swift in Sources */,
+				7051B5B720C8297E00FEA562 /* ApiConvenience.swift in Sources */,
+				7051B5B320C6623100FEA562 /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,7 +288,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XRUZX72PMD;
-				INFOPLIST_FILE = TianIann/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TianIann/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -245,7 +297,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = PinguDemo.TianIann;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -315,7 +367,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XRUZX72PMD;
-				INFOPLIST_FILE = TianIann/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TianIann/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -324,7 +376,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = PinguDemo.TianIann;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

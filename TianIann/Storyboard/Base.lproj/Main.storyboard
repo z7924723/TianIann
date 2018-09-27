@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -72,7 +72,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7cG-hB-8f8"/>
-                                            <segue destination="ky4-nO-tCQ" kind="show" id="8u1-tT-6mw"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAu-j0-dd1" userLabel="Error Display Label">
@@ -124,13 +123,63 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
-        <!--MovieTabScreen-->
-        <scene sceneID="Kgw-6P-Rf3">
+        <!--Web Auth View Controller-->
+        <scene sceneID="M2A-si-lEb">
             <objects>
-                <viewControllerPlaceholder storyboardName="MovieTabScreen" id="ky4-nO-tCQ" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bq0-83-OMf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="WebAuthViewController" id="EEt-J2-E5b" customClass="WebAuthViewController" customModule="TianIann" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a0j-hk-JNW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="395-jH-Kcp">
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="395-jH-Kcp" firstAttribute="trailing" secondItem="VAA-32-V0r" secondAttribute="trailing" id="JlT-7I-0Qx"/>
+                            <constraint firstItem="395-jH-Kcp" firstAttribute="top" secondItem="VAA-32-V0r" secondAttribute="top" id="Mfe-of-jQh"/>
+                            <constraint firstItem="395-jH-Kcp" firstAttribute="bottom" secondItem="VAA-32-V0r" secondAttribute="bottom" id="ReG-KE-sjM"/>
+                            <constraint firstItem="395-jH-Kcp" firstAttribute="leading" secondItem="VAA-32-V0r" secondAttribute="leading" id="rAV-iB-Z0V"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VAA-32-V0r"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="395-jH-Kcp" id="GRq-cF-v1p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RX5-Ar-uPU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="911" y="133"/>
+            <point key="canvasLocation" x="971" y="133"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="yjF-TH-Yqe">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" id="kQP-6z-o5c" customClass="ProfileViewController" customModule="TianIann" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SmJ-cu-UlZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daw-Pw-xQ7">
+                                <rect key="frame" x="139" y="352" width="136" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="MLK-Pt-NVn"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dje-6O-c91" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1869.5652173913045" y="132.88043478260872"/>
         </scene>
     </scenes>
     <resources>

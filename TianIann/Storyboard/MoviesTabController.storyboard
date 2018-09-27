@@ -9,21 +9,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Favorites-->
+        <!--FavoritesScreen-->
         <scene sceneID="Z7q-vu-3zc">
             <objects>
-                <viewControllerPlaceholder storyboardName="Favorites" id="SxD-N7-9RT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorites" id="Skf-wK-wtW"/>
+                <viewControllerPlaceholder storyboardName="FavoritesScreen" id="SxD-N7-9RT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" id="Skf-wK-wtW" userLabel="Favorites Tab Bar Item"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PHd-da-Ij5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1810" y="21"/>
+            <point key="canvasLocation" x="1794" y="21"/>
         </scene>
-        <!--Comedy-->
+        <!--HomeScreen-->
         <scene sceneID="iVd-ho-xDx">
             <objects>
-                <viewControllerPlaceholder storyboardName="Comedy" id="46O-Rg-MvI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Comedy" id="nZT-65-yYd"/>
+                <viewControllerPlaceholder storyboardName="HomeScreen" id="46O-Rg-MvI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" id="nZT-65-yYd" userLabel="Home Tab Bar Item"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5X3-Zz-kEr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -32,8 +32,8 @@
         <!--Tab Bar Controller-->
         <scene sceneID="APX-be-uCb">
             <objects>
-                <tabBarController id="rzQ-nz-ZTZ" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EOC-Xc-f7B">
+                <tabBarController storyboardIdentifier="MoviesTabController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rzQ-nz-ZTZ" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="EOC-Xc-f7B">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
